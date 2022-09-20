@@ -10,12 +10,9 @@ body {
     background-size: cover;
 }
 
-:root {
-   
-}
 h1 {
     text-align: center;
-    color: azure;
+    color: rgb(238, 242, 246);
 }
 .game-grid {
     height: 90vh;
@@ -38,12 +35,10 @@ h1 {
 }
 
 .square.x {
-    content: "X";
     background-color: blue;
 }
 
 .square.o {
-    content: "O";
     background-color: red;
 }
 
