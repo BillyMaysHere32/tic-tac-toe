@@ -1,0 +1,78 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background: url("../tic-tac-toe/pics/pic1.JPG") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+:root {
+   
+}
+h1 {
+    text-align: center;
+    color: azure;
+}
+.game-grid {
+    height: 90vh;
+    width: 100vw;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(3, auto); 
+    opacity: 0.5;
+    grid-gap: 5px;
+   }
+
+.square {
+    height: 20vh;
+    width: 20vw;
+    background-color: rgb(152, 150, 150);
+    cursor: pointer;
+}
+
+.square.x {
+    content: "X";
+}
+.square.x, .square.o {
+    cursor: not-allowed;
+}
+
+.endgame-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: .7;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    font-size: 6rem;
+}
+
+#restart-button {
+    background-color: aliceblue;
+    cursor: pointer;
+    font-size: 4rem;
+    padding: .25rem .5rem;
+    border: 1px solid black;
+}
+
+#restart-button:hover {
+    background-color: black;
+    color: aliceblue;
+}
+
+.endgame-message.show{
+    display: flex;
+}
