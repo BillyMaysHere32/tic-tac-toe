@@ -38,9 +38,18 @@ function clickAction(e) {
     if (checkWin(currentClass)) {
         //console.log('winner');
         endGame(false);
+    } else if (isDraw()) {
+        endGame(true)
+    } else {
+        switchTurns()
     }
-    switchTurns()
 };
+
+function isDraw() {
+    return [...squareDivs].every(square => {
+        return square.classList.contains(xClass) || square.classList.contains(circleClass)
+    })
+}
 
 function placeMark(square, currentClass){
     square.classList.add(currentClass);
@@ -48,7 +57,7 @@ function placeMark(square, currentClass){
 
 function endGame(draw) {
     if (draw) {
-
+        endGameText.innerText = 'Draw!';
     } else {
         endGameText.innerText = `${circleTurn ? 'Red' : 'Blue'} Wins!`;
     }
