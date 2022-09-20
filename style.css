@@ -39,7 +39,14 @@ h1 {
 
 .square.x {
     content: "X";
+    background-color: blue;
 }
+
+.square.o {
+    content: "O";
+    background-color: red;
+}
+
 .square.x, .square.o {
     cursor: not-allowed;
 }

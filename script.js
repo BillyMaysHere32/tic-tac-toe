@@ -1,20 +1,10 @@
-let gameBoard = (function() {
-    let gameBoard = [];
-    return {};
-})();
-
-let displayController = (function() {
-    
-    return {};
-})();
-
-
 const xClass = 'x';
 const circleClass = 'o';
 const squareDivs = document.querySelectorAll('.square');
 const board = document.querySelector('game-grid');
 const endgameMessage = document.querySelector('.endgame-message')
 const endGameText = document.querySelector('[endgame-message-text]')
+const restartBtn =document.getElementById('restart-button')
 let circleTurn;
 const winCombinations = [
     [0, 1, 2],
@@ -26,10 +16,19 @@ const winCombinations = [
     [0, 4, 8],
     [2, 4, 6],
   ];
+gameBoard()
+  function gameBoard() {
+    circleTurn = false;
+    squareDivs.forEach(square => {
+        square.classList.remove(xClass);
+        square.classList.remove(circleClass);
+        
+        square.addEventListener('click', clickAction, { once:true})
+    });
+    endgameMessage.classList.remove('show');
+};
 
-squareDivs.forEach(square => {
-    square.addEventListener('click', clickAction, { once:true})
-});
+restartBtn.addEventListener('click', gameBoard);
 
 function clickAction(e) {
     const square =e.target;
